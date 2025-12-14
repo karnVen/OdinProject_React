@@ -2,18 +2,9 @@ import { useState } from 'react'
 import reactLogo from './assets/react.svg'
 import viteLogo from '/vite.svg'
 import './App.css'
-
-// src/App.jsx
-
-function App() {
-  return (
-    <div>
-      <h1>Hello, World!</h1>
-    </div>
-  );
+function App(){
+  return <h1>karnVen</h1>;
 }
-
-
 
 // function App() {
 //   const [count, setCount] = useState(0)
