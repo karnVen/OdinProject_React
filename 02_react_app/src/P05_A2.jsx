@@ -82,7 +82,8 @@ export  function P05A2F4() {
         alt={person.name}
       />
       <ul>
-        <li>Improve the videophone</li>
+        <li>Improvkjn the videophonihhljkh
+          e</li>
         <li>Prepare aeronautics lectures</li>
         <li>Work on the alcohol-fuelled engine</li>
       </ul>
