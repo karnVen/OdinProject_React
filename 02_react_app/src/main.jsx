@@ -10,7 +10,7 @@ import { P06F1,P06F2 ,P06F3,P06F4
 
 import {P06A1F2} from './P06_A1.jsx'
 import { P06A2F1 ,P06A2F2} from './P06_A2.jsx'
-
+import { P07F1,P07A1F1 ,P07A1F2} from './P07.jsx'
 
 createRoot(document.getElementById('root')).render(
   <StrictMode>
@@ -32,6 +32,9 @@ createRoot(document.getElementById('root')).render(
     <P06A1F2/>
     <P06A2F1/>
     <P06A2F2/>
+    <P07F1/>
+    <P07A1F1/>
+    <P07A1F2/>
 
 
 
