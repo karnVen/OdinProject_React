@@ -1,10 +1,56 @@
 import { useState } from 'react'
 import reactLogo from './assets/react.svg'
 import viteLogo from '/vite.svg'
-import './App.css'
-function App(){
-  return <h1>karnVen</h1>;
+import './Ass.css'
+
+const COLORS = ["pink", "green", "blue", "yellow", "black"];
+
+export function Head() {
+  return <h1>Color Switcher</h1>;
 }
+
+export function App() {
+  // State 1: Tracks the background color
+  const [backgroundColor, setBackgroundColor] = useState(COLORS[0]);
+  
+  // State 2: Tracks the number of clicks (New!)
+  const [count, setCount] = useState(0);
+
+  const onButtonClick = (color) => () => {
+    // Action 1: Change the color
+    setBackgroundColor(color);
+    // Action 2: Increase the count
+    setCount(count + 1);
+  };
+
+  return (
+    <div
+      className="App"
+      style={{
+        backgroundColor,
+      }}
+    >
+      <Head />
+      
+      {/* Display the Counter here */}
+      <h2>Changes: {count}</h2>
+
+      <div className="buttons">
+        {COLORS.map((color) => (
+          <button
+            type="button"
+            key={color}
+            onClick={onButtonClick(color)}
+            className={backgroundColor === color ? "selected" : ""}
+          >
+            {color}
+          </button>
+        ))}
+      </div>
+    </div>
+  );
+}
+
 
 // function App() {
 //   const [count, setCount] = useState(0)
@@ -35,4 +81,3 @@ function App(){
 //   )
 // }
 
-export default App
