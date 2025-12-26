@@ -104,3 +104,20 @@ export function P09F1() {
 }];
 ///////////////////////////////////////////////////////////////////////////////////////////////////////////
 
+function Image2() {  // Remove 'export default' from here
+  return (
+    <img
+      src="https://i.imgur.com/ZF6s192.jpg"
+      alt="..."
+    />
+  );
+}
+
+// Rename 'k' to 'Gallery' (Standard Naming) and export it
+export function Image() { 
+  return (
+    <div>
+      <Image2 />
+    </div>
+  );
+}
