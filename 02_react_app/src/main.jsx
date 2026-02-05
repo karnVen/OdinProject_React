@@ -14,9 +14,16 @@ import { P07F1,P07A1F1 ,P07A1F2} from './P07.jsx'
 import { P08F1,P08F2,P08A1F1,P08A1F2,P08A1F3,P08A1F4} from './P08.jsx'
 import { P09F1 ,Image} from './P09.jsx'
 import {App} from './App.jsx'
-import { P10F1,P10F3,P10A3 } from './P10.jsx'
+import { P10F1,P10F3,P10A3,Menu } from './P10.jsx'
+import {P12F1,P12F2,P12F3,P12F4} from './P12.jsx'
 createRoot(document.getElementById('root')).render(
   <StrictMode>
+
+    <Menu/>
+    {/* <P12F1/>
+    <P12F2/>
+    <P12F3/>
+    <P12F4/> */}
     <P10A3/>
    
     <P10F3/>
