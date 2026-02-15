@@ -1,9 +1,13 @@
 import { useEffect, useState } from 'react'
 import './App.css'
+import Card from './components/Card';
 
 function App() {
   // 1. Initialize as an ARRAY [], not a string. We want a list of cards.
   const [cards, setCards] = useState([]);
+const [clickedCards, setClickedCards] = useState([]);
+  const [score,setScore]=useState(0);
+  const [bestScore, setBestScore] = useState(0);
 
   // useEffect(() => {
   //   // 2. Define the async logic inside
@@ -49,19 +53,70 @@ function App() {
 
       // 4. Log the final array of 12 objects
       console.log(formattedCards);
+      setCards(formattedCards);
       
       // 5. Save ONLY the data we need (name and image) to state
       // (We will do this step next, just log 'results' for now)
+
+      ///////////////////////////////////////
+     
     };
 
+    
     fetchGameCards();
   }, []);
 
-  return (
-    <div>
-      <h1>Check the Console</h1>
+   const shuffleArray =(array)=>{
+      return [...array].sort(()=>Math.random() - 0.5);
+    }
+
+    const handleCardClick = (id) => {
+    // 1. Check if the card was already clicked
+    if (clickedCards.includes(id)) {
+      // --- GAME OVER ---
+      console.log("Game Over! You clicked this one already.");
+      setScore(0);
+      setClickedCards([]); // Reset memory
+    } else {
+      // --- SCORE POINT ---
+      console.log("Good job! New card.");
+      
+      // Update Score
+      const newScore = score + 1;
+      setScore(newScore);
+      
+      // Update Best Score if needed
+      if (newScore > bestScore) setBestScore(newScore);
+
+      // Add this ID to our memory
+      setClickedCards([...clickedCards, id]);
+    }
+
+    // 2. ALWAYS SHUFFLE THE CARDS
+    // We create a shuffled copy of the current cards and update state
+    setCards(shuffleArray(cards));
+  };
+
+
+ return (
+    <div className="app">
+      <header>
+        <h1>Pokemon Memory Game</h1>
+        <p>Score: {score} | Best Score: {bestScore}</p>
+      </header>
+
+      <div className="card-grid">
+        {cards.map((card) => (
+          <Card 
+            key={card.id} 
+            image={card.image} 
+            name={card.name}
+            onClick={() => handleCardClick(card.id)}
+          />
+        ))}
+      </div>
     </div>
-  )
+ )
 }
 
 export default App
