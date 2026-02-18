@@ -52,6 +52,12 @@ export function App() {
 }
 
 
+// App.jsx
+
+export const App2 = () => <h1>Our First Test</h1>;
+
+
+
 // function App() {
 //   const [count, setCount] = useState(0)
 
