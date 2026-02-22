@@ -55,11 +55,11 @@ export function App() {
 // App.jsx
 
 // src/App.jsx
-export function App2() { // <--- Notice the word "export" here
-  return <h1>Our First Test </h1>;
-}
+// export function App2() { // <--- Notice the word "export" here
+//   return <h1>Our First Test</h1>;
+// }
 
-export default App2;
+// export default App2;
 // function App() {
 //   const [count, setCount] = useState(0)
 
@@ -89,3 +89,21 @@ export default App2;
 //   )
 // }
 
+export const App2 = () => {
+  const [heading, setHeading] = useState("Magnificent Monkeys");
+
+  const clickHandler = () => {
+    setHeading("Radical Rhinos");
+  };
+
+  return (
+    <>
+      <button type="button" onClick={clickHandler}>
+        Click Me
+      </button>
+      <h1>{heading}</h1>
+    </>
+  );
+};
+
+export default App2;
