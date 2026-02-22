@@ -1,6 +1,6 @@
 import { useState } from 'react'
 import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
+//import viteLogo from '/vite.svg'
 import './Ass.css'
 
 const COLORS = ["pink", "green", "blue", "yellow", "black"];
@@ -54,10 +54,12 @@ export function App() {
 
 // App.jsx
 
-export const App2 = () => <h1>Our First Test</h1>;
+// src/App.jsx
+export function App2() { // <--- Notice the word "export" here
+  return <h1>Our First Test </h1>;
+}
 
-
-
+export default App2;
 // function App() {
 //   const [count, setCount] = useState(0)
 
